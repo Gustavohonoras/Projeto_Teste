@@ -8,7 +8,7 @@
         #pokemonInput
         debounce="300"
       ></ion-input>
-      <ion-button (click)="carregarPokemon(pokemonInput.value?.toString() || '')">Buscar</ion-button>
+      <button (click)="carregarPokemon(pokemonInput.value?.toString() || '')" class="button-pesquisa">Buscar</button>
 
 
     </ion-item>
@@ -22,12 +22,12 @@
       {{ erro }}
     </div>
 
-    <div *ngIf="nome && !loading" class="container-pokemon" button (click)="irParaDetalhes(nome)">
-      <ion-card >
+      <div *ngIf="nome && !loading" class="container-pokemon" button (click)="irParaDetalhes(nome)" >
         <h2>{{ nome | titlecase }}</h2>
         <img [src]="imagemUrl" alt="{{ nome }}" />
-      </ion-card>
-    </div>
+      </div>
+      <span class="orientacao-text">clique no pokemon para ver detalhes</span>
+
 
   </div>
   

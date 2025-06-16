@@ -16,6 +16,8 @@ export class DetalhesPage implements OnInit {
   detalhes: any[] = [];
   loading = false;
   erro = '';
+  imagemUrl: string = '';
+
 
   constructor(
     private route: ActivatedRoute,
@@ -43,8 +45,8 @@ export class DetalhesPage implements OnInit {
           { titulo: 'Tipos', texto: data.types.map((t: any) => t.type.name).join(', '), imagem: 'assets/icons/tipo.png' },
           { titulo: 'Habilidades', texto: data.abilities.map((a: any) => a.ability.name).join(', '), imagem: 'assets/icons/habilidade.png' },
           { titulo: 'Movimentos', texto: data.moves.slice(0, 5).map((m: any) => m.move.name).join(', '), imagem: 'assets/icons/movimento.png' },
-          { titulo: 'Imagem', texto: '', imagem: data.sprites.front_default }
         ];
+        this.imagemUrl = data.sprites.front_default; 
         this.loading = false;
       },
       error: () => {

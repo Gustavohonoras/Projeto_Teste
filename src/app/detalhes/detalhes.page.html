@@ -1,13 +1,22 @@
-<ion-content class="ion-padding">
-  <div *ngFor="let detalhe of detalhes; let last = last" class="detalhe-item">
-    <h3>{{ detalhe.titulo | titlecase }}</h3>
-    <p>{{ detalhe.texto }}</p>
+<div class="container-detalhes">
+  <h1 class="title-detalhes">Detalhes Pokemon</h1>
+  <div class="content-detalhes">
+  
+  <div class="card-detalhes">
+    <div *ngFor="let detalhe of detalhes" class="detalhe-item">
+      <h3>{{ detalhe.titulo | titlecase }}</h3>
+      <p>{{ detalhe.texto }}</p>
+    </div>
+  </div>  
 
-    <!-- Mostra a imagem só no último item -->
-    <img *ngIf="last && detalhe.imagem" [src]="detalhe.imagem" alt="{{ detalhe.titulo }}" />
+
+    <div class="pokemon-imagem" *ngIf="imagemUrl">
+    <img [src]="imagemUrl" [alt]="nome" />
+    </div>
   </div>
 
-  <ion-button expand="full" (click)="voltarParaHome()" style="margin-top: 30px;">
+
+  <button expand="full" (click)="voltarParaHome()" class="button-pesquisa">
     Nova pesquisa
-  </ion-button>
-</ion-content>
+  </button>
+</div>

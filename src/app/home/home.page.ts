@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // para o ion-input
 import { Router } from '@angular/router';
-import { PokemonService } from '../services/pokemon.service'; // ajuste o caminho conforme seu projeto
+import { PokemonService } from '../services/pokemon.service'; 
 
 @Component({
   selector: 'app-home',
