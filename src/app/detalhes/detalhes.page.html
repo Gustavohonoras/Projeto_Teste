@@ -1,0 +1,13 @@
+<ion-content class="ion-padding">
+  <div *ngFor="let detalhe of detalhes; let last = last" class="detalhe-item">
+    <h3>{{ detalhe.titulo | titlecase }}</h3>
+    <p>{{ detalhe.texto }}</p>
+
+    <!-- Mostra a imagem só no último item -->
+    <img *ngIf="last && detalhe.imagem" [src]="detalhe.imagem" alt="{{ detalhe.titulo }}" />
+  </div>
+
+  <ion-button expand="full" (click)="voltarParaHome()" style="margin-top: 30px;">
+    Nova pesquisa
+  </ion-button>
+</ion-content>
